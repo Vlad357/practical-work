@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour
                 return;
             else if(isButtonTimer && Convert.ToInt32(GameManager.Instance.eatCounter.text) >= 0)
             {
-                GameManager.Instance.eatCounter.text = (Convert.ToInt32(GameManager.Instance.eatCounter.text) - 1).ToString();
+                GameManager.Instance.EatCount = Convert.ToInt32(GameManager.Instance.eatCounter.text) - 1;
             }
             currentTime = totalTime;
             isEnd = false;

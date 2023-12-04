@@ -15,6 +15,33 @@ public class GameManager : MonoBehaviour
     public int peasantConditionsCount;
     public int eatConditionsCount;
 
+    public int EatCount
+    {
+        get
+        {
+            return Convert.ToInt32(eatCounter);
+        }
+        set
+        {
+            eatCounter.text = value.ToString();
+            if (value >= eatConditionsCount)
+            {
+                eatVictoryConditions = true;
+                CheckVictory();
+            }
+            if (value >= 1)
+            {
+                peasantCreate.interactable = true;
+                warriorCreate.interactable = true;
+            }
+            if (value <= 0)
+            {
+                peasantCreate.interactable = false;
+                warriorCreate.interactable = false;
+            }
+        }
+    }
+
     private bool peasantVictoryConditions = false;
     private bool eatVictoryConditions = false;
 
@@ -71,7 +98,7 @@ public class GameManager : MonoBehaviour
         int eatCount = Convert.ToInt32(eatCounter.text);
         personCounter.text = (personCount + 1).ToString();
         eatCount -= 1;
-        eatCounter.text = eatCount > 0 ? eatCount.ToString() : 0.ToString();
+        EatCount = eatCount > 0 ? eatCount : 0;
     }
 
     public void EatCreate()
@@ -79,17 +106,8 @@ public class GameManager : MonoBehaviour
         int eatCount = Convert.ToInt32(eatCounter.text);
         int peasantCount = Convert.ToInt32(peasantCounter.text);
         eatCount += peasantCount * createEatCount;
-        eatCounter.text = eatCount.ToString();
-        if(eatCount >= eatConditionsCount)
-        {
-            eatVictoryConditions = true;
-            CheckVictory();
-        }
-        if (eatCount >= 1)
-        {
-            peasantCreate.interactable = true;
-            warriorCreate.interactable = true;
-        }
+        EatCount = eatCount;
+        
     }
 
     public void UseEat()
@@ -97,19 +115,7 @@ public class GameManager : MonoBehaviour
         int eatCount = Convert.ToInt32(eatCounter.text);
         int warriorsCount = Convert.ToInt32(warriorsCounter.text);
         int resultEat = eatCount - warriorsCount;
-        eatCounter.text = resultEat > 0 ? resultEat.ToString() : 0.ToString();
-
-
-        if (resultEat <= 0)
-        {
-            peasantCreate.interactable = false;
-            warriorCreate.interactable = false;
-        }
-        if (resultEat >= 1)
-        {
-            peasantCreate.interactable = true;
-            warriorCreate.interactable = true;
-        }
+        EatCount = resultEat > 0 ? resultEat : 0;
     }
 
     public void GameCycle()
@@ -144,8 +150,9 @@ public class GameManager : MonoBehaviour
 
         peasantCounter.text = peasantDefaultCount.ToString();
         warriorsCounter.text = warriorsDefaultCount.ToString();
-        eatCounter.text = eatDefaultCount.ToString();
         enemyCountInNextWave.text = enemyDefaultCountInNextWave.ToString();
+        EatCount = eatDefaultCount;
+
 
         peasantVictoryConditions = false;
         eatVictoryConditions = false;
