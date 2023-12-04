@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,9 +29,20 @@ public class GameManager : MonoBehaviour
     public int eatDefaultCount;
     public int enemyDefaultCountInNextWave;
 
+    public int createEatCount;
+
     [Header("timers")]
     public Timer eatUseTimer;
     public Timer eatCreateTimer;
+
+    [Header("Cycles info")]
+    public int saveCycles;
+    public TextMeshProUGUI currentCycleText;
+    public TextMeshProUGUI cyclesBeforeRaid;
+
+    [Header("Buttons")]
+    public Button peasantCreate;
+    public Button warriorCreate;
     public bool CheckPeasant()
     {
         int peasantCountValue = Convert.ToInt32(peasantCounter.text);
@@ -66,12 +78,17 @@ public class GameManager : MonoBehaviour
     {
         int eatCount = Convert.ToInt32(eatCounter.text);
         int peasantCount = Convert.ToInt32(peasantCounter.text);
-        eatCount += peasantCount;
+        eatCount += peasantCount * createEatCount;
         eatCounter.text = eatCount.ToString();
         if(eatCount >= eatConditionsCount)
         {
             eatVictoryConditions = true;
             CheckVictory();
+        }
+        if (eatCount >= 1)
+        {
+            peasantCreate.interactable = true;
+            warriorCreate.interactable = true;
         }
     }
 
@@ -81,7 +98,32 @@ public class GameManager : MonoBehaviour
         int warriorsCount = Convert.ToInt32(warriorsCounter.text);
         int resultEat = eatCount - warriorsCount;
         eatCounter.text = resultEat > 0 ? resultEat.ToString() : 0.ToString();
+
+
+        if (resultEat <= 0)
+        {
+            peasantCreate.interactable = false;
+            warriorCreate.interactable = false;
+        }
+        if (resultEat >= 1)
+        {
+            peasantCreate.interactable = true;
+            warriorCreate.interactable = true;
+        }
     }
+
+    public void GameCycle()
+    {
+        int currentCycle = Convert.ToInt32(currentCycleText.text) + 1;
+        currentCycleText.text = currentCycle.ToString();
+        cyclesBeforeRaid.text = (saveCycles - currentCycle).ToString();
+
+        if(saveCycles - currentCycle <= 0)
+        {
+            Raid();
+        }
+    }
+
     public void Raid()
     {
         int warriorsCount = Convert.ToInt32(warriorsCounter.text);
@@ -104,6 +146,9 @@ public class GameManager : MonoBehaviour
         warriorsCounter.text = warriorsDefaultCount.ToString();
         eatCounter.text = eatDefaultCount.ToString();
         enemyCountInNextWave.text = enemyDefaultCountInNextWave.ToString();
+
+        peasantVictoryConditions = false;
+        eatVictoryConditions = false;
 
         Time.timeScale = 1;
     }
@@ -128,6 +173,7 @@ public class GameManager : MonoBehaviour
     {
         eatCreateTimer.ruleTimer = CheckPeasant;
         eatUseTimer.ruleTimer = CheckWarriors;
+        cyclesBeforeRaid.text = saveCycles.ToString();
     }
 
     private void Start()
