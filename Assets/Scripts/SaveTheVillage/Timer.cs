@@ -5,61 +5,71 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class Timer : MonoBehaviour
+namespace SaveTheVillage
 {
-    public UnityEvent eventOnCoolDown;
-    public CheckRule ruleTimer;
 
-    public bool isButtonTimer = false;
-
-    private bool isEnd = true;
-    private Image sprite;
-
-    [SerializeField] private float totalTime;
-    [SerializeField] private float currentTime;
-
-    public void ReloadTimer()
+    public class Timer : MonoBehaviour
     {
-        if (isEnd)
-        {
-            if (isButtonTimer && Convert.ToInt32(GameManager.Instance.eatCounter.text) <= 0)
-                return;
-            else if(isButtonTimer && Convert.ToInt32(GameManager.Instance.eatCounter.text) >= 0)
-            {
-                GameManager.Instance.EatCount = Convert.ToInt32(GameManager.Instance.eatCounter.text) - 1;
-            }
-            currentTime = totalTime;
-            isEnd = false;
-        }
-    }
+        public UnityEvent eventOnCoolDown;
+        public CheckRule ruleTimer;
+        public AudioSource audio;
 
-    private void Update()
-    {
-        if(currentTime <= 0)
+        public bool isButtonTimer = false;
+
+        private bool isEnd = true;
+        private Image sprite;
+
+        [SerializeField] private float totalTime;
+        [SerializeField] private float currentTime;
+
+        public void ReloadTimer()
         {
-            sprite.fillAmount = 1;
-            if(!isEnd)eventOnCoolDown?.Invoke();
-            isEnd = true;
-            if (!isButtonTimer && ruleTimer != null && ruleTimer())
+            if (isEnd)
             {
-                ReloadTimer();
+                int eatCounter = Convert.ToInt32(GameManager.Instance.eatCounter.text);
+                if (isButtonTimer && eatCounter <= 0)
+                    return;
+                else if (isButtonTimer && eatCounter >= 0)
+                {
+                    GameManager.Instance.EatCount = eatCounter - 1;
+                }
+                currentTime = totalTime;
+                isEnd = false;
             }
         }
-        else
+
+        private void Update()
         {
-            currentTime -= Time.deltaTime;
-            sprite.fillAmount = currentTime / totalTime;
+            if (currentTime <= 0)
+            {
+                sprite.fillAmount = 1;
+                if (!isEnd)
+                {
+                    eventOnCoolDown?.Invoke();
+                    audio.Play();
+                }
+                    isEnd = true;
+                if (!isButtonTimer && ruleTimer != null && ruleTimer())
+                {
+                    ReloadTimer();
+                }
+            }
+            else
+            {
+                currentTime -= Time.deltaTime;
+                sprite.fillAmount = currentTime / totalTime;
+            }
+        }
+
+        private void Start()
+        {
+            sprite = GetComponent<Image>();
+            if (ruleTimer.IsUnityNull())
+            {
+                ruleTimer = () => true;
+            }
         }
     }
 
-    private void Start()
-    {
-        sprite = GetComponent<Image>();
-        if (ruleTimer.IsUnityNull())
-        {
-            ruleTimer = () => true;
-        }
-    }
+    public delegate bool CheckRule();
 }
-
-public delegate bool CheckRule();
