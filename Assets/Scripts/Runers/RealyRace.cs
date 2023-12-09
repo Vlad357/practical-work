@@ -25,7 +25,7 @@ namespace Runers
         }
 
 
-        private void Start()
+        private void Awake()
         {
             if (Instance == null)
             {

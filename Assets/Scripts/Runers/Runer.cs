@@ -70,6 +70,5 @@ namespace Runers
                 marker.SetRuner(runer);
             }
         }
-
     }
 }
