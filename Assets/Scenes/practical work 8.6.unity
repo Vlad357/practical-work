@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  marker: {fileID: 0}
   _isRuner: 0
   _targetPoint: {fileID: 1305658037}
 --- !u!4 &41675200
@@ -548,6 +549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 217442284}
+  - component: {fileID: 217442285}
   m_Layer: 0
   m_Name: marker
   m_TagString: Untagged
@@ -571,6 +573,18 @@ Transform:
   - {fileID: 87787463}
   m_Father: {fileID: 415718791}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &217442285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217442283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 118826f47d3c84d46a66e180b5157938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &218205230
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,6 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  marker: {fileID: 0}
   _isRuner: 0
   _targetPoint: {fileID: 1305658037}
 --- !u!4 &377762553
@@ -959,6 +974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  marker: {fileID: 217442285}
   _isRuner: 1
   _targetPoint: {fileID: 1305658037}
 --- !u!65 &415718793
@@ -1459,6 +1475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  marker: {fileID: 0}
   _isRuner: 0
   _targetPoint: {fileID: 1305658037}
 --- !u!4 &1114689671
@@ -1558,6 +1575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  marker: {fileID: 0}
   _isRuner: 0
   _targetPoint: {fileID: 1305658037}
 --- !u!4 &1152444952
