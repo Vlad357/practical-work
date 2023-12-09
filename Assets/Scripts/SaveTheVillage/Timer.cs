@@ -12,7 +12,7 @@ namespace SaveTheVillage
     {
         public UnityEvent eventOnCoolDown;
         public CheckRule ruleTimer;
-        public AudioSource audio;
+        public new AudioSource audio;
 
         public bool isButtonTimer = false;
 
