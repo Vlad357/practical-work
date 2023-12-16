@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleAnimationController : MonoBehaviour
+namespace WildBall
 {
-    private Animator _animator;
-
-    public void SwitchAnimtaion()
+    public class ObstacleAnimationController : MonoBehaviour
     {
-        _animator.SetInteger("random animation", Random.Range(0, 2));
-    }
+        public int minValue;
+        public int maxValue;
+        private Animator _animator;
 
-    private void Start()
-    {
-        _animator = GetComponent<Animator>();
+        public void SwitchAnimtaion()
+        {
+            _animator.SetInteger("random animation", Random.Range(minValue, maxValue + 1));
+        }
+
+        private void Start()
+        {
+            _animator = GetComponent<Animator>();
+        }
     }
 }

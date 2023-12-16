@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,8 @@ namespace WildBall
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
+
+        public List<GameObject> obstacles;
 
         public void LoadGameScene(int index)
         {
@@ -30,6 +33,20 @@ namespace WildBall
             }
 
             DontDestroyOnLoad(gameObject);
+
+            FindObstacle();
+        }
+
+        private void FindObstacle()
+        {
+            obstacles.Clear();
+
+            ObstacleAnimationController[] objetcs = FindObjectsOfType<ObstacleAnimationController>();
+
+            foreach (ObstacleAnimationController obj in objetcs)
+            {
+                obstacles.Add(obj.gameObject);
+            }
         }
     }
 }
