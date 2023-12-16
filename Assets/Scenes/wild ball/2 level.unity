@@ -341,6 +341,53 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!1 &1060675332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1060675334}
+  - component: {fileID: 1060675333}
+  m_Layer: 0
+  m_Name: game manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1060675333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060675332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f247c64b71ce6164481102aefafea387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeUntilVictory: 10
+  obstacles: []
+  exitPrefab: {fileID: 4149903629264833089, guid: de1ea423e7e0a3d409d531235074c872, type: 3}
+--- !u!4 &1060675334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060675332}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.7740483, y: 0.64673793, z: -2.3803344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1076434437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,6 +1265,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1627404610}
     m_Modifications:
+    - target: {fileID: 4374255083779434911, guid: f053287a27ceb8a4baf1be3796dc9527, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5624098088353194019, guid: f053287a27ceb8a4baf1be3796dc9527, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.84
@@ -1262,6 +1313,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ball
       objectReference: {fileID: 0}
+    - target: {fileID: 8007790533623963597, guid: f053287a27ceb8a4baf1be3796dc9527, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007790533623963597, guid: f053287a27ceb8a4baf1be3796dc9527, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1276,3 +1335,4 @@ SceneRoots:
   - {fileID: 1627404610}
   - {fileID: 1442721393934955721}
   - {fileID: 862382508}
+  - {fileID: 1060675334}

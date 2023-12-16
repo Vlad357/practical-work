@@ -1,5 +1,6 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,17 +9,55 @@ namespace WildBall
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
-
+        public float timeUntilVictory = 10f;
         public List<GameObject> obstacles;
 
-        public void LoadGameScene(int index)
+        public Action LoseAction;
+
+        public GameObject exitPrefab;
+
+        public void LoadNextLevel()
         {
-            SceneManager.LoadScene(index);
+            if(SceneManager.GetActiveScene().buildIndex < 5)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                return;
+            }
+            SceneManager.LoadScene(1);
         }
 
-        public void ReloadScene()
+        public void LoseEvent()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            LoseAction?.Invoke();
+        }
+
+        private IEnumerator Countdown()
+        {
+            if(SceneManager.GetActiveScene().buildIndex != 0)
+            {
+                yield return new WaitForSeconds(timeUntilVictory);
+                DeleteAllObstacle();
+                SpawnExit();
+            }
+        }
+
+        private void SpawnExit()
+        {
+            Instantiate(exitPrefab);
+        }
+
+        private void DeleteAllObstacle()
+        {
+            foreach (GameObject obstacle in obstacles)
+            {
+                Destroy(obstacle);
+            }
+        }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            StartCoroutine(Countdown());
+            FindObstacle();
         }
 
         private void Start()
@@ -27,23 +66,27 @@ namespace WildBall
             {
                 Instance = this;
             }
-            else if(Instance == this)
+            else
             {
                 Destroy(gameObject);
+                return;
             }
 
             DontDestroyOnLoad(gameObject);
 
+            StartCoroutine(Countdown());
             FindObstacle();
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
         private void FindObstacle()
         {
             obstacles.Clear();
 
-            ObstacleAnimationController[] objetcs = FindObjectsOfType<ObstacleAnimationController>();
+            Obstacle[] objetcs = FindObjectsOfType<Obstacle>();
 
-            foreach (ObstacleAnimationController obj in objetcs)
+            foreach (Obstacle obj in objetcs)
             {
                 obstacles.Add(obj.gameObject);
             }

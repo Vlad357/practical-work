@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -31,6 +29,11 @@ namespace WildBall
             if (relativeVelocity.magnitude > 1) { relativeVelocity.Normalize(); }
 
             _cameraRelativeInput = relativeVelocity;
+        }
+
+        public void Lose()
+        {
+            GameManager.Instance.LoseEvent();
         }
 
         private void Awake()

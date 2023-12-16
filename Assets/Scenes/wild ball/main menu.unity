@@ -244,6 +244,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f247c64b71ce6164481102aefafea387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeUntilVictory: 10
+  obstacles: []
+  exitPrefab: {fileID: 0}
 --- !u!4 &83071660
 Transform:
   m_ObjectHideFlags: 0
@@ -1023,6 +1026,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1511858202164278195, guid: f053287a27ceb8a4baf1be3796dc9527, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5624098088353194019, guid: f053287a27ceb8a4baf1be3796dc9527, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.36
@@ -1061,6 +1068,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5624098088353194019, guid: f053287a27ceb8a4baf1be3796dc9527, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6121351480218761799, guid: f053287a27ceb8a4baf1be3796dc9527, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295205016124709436, guid: f053287a27ceb8a4baf1be3796dc9527, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8007790533623963597, guid: f053287a27ceb8a4baf1be3796dc9527, type: 3}
