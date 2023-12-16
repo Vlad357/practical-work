@@ -879,7 +879,7 @@ GameObject:
   - component: {fileID: 1192034041}
   m_Layer: 0
   m_Name: obstacle
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -935,7 +935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minValue: 0
-  maxValue: 0
+  maxValue: 1
 --- !u!1 &1397745285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,7 +1160,7 @@ GameObject:
   - component: {fileID: 1598991737}
   m_Layer: 0
   m_Name: obstacle
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1217,7 +1217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minValue: 0
-  maxValue: 0
+  maxValue: 1
 --- !u!1 &1627404609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,6 +1799,14 @@ PrefabInstance:
     - target: {fileID: 5624098088353194019, guid: f053287a27ceb8a4baf1be3796dc9527, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6121351480218761799, guid: f053287a27ceb8a4baf1be3796dc9527, type: 3}
+      propertyPath: m_Actions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 3ac6d886696543a41b1570b57b888adf, type: 3}
+    - target: {fileID: 6121351480218761799, guid: f053287a27ceb8a4baf1be3796dc9527, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Ball
       objectReference: {fileID: 0}
     - target: {fileID: 8007790533623963597, guid: f053287a27ceb8a4baf1be3796dc9527, type: 3}
       propertyPath: m_Name
