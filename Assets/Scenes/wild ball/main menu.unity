@@ -246,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeUntilVictory: 10
   obstacles: []
-  exitPrefab: {fileID: 0}
+  exitPrefab: {fileID: 4149903629264833089, guid: de1ea423e7e0a3d409d531235074c872, type: 3}
 --- !u!4 &83071660
 Transform:
   m_ObjectHideFlags: 0
