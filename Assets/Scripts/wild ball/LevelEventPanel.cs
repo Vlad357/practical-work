@@ -23,10 +23,13 @@ namespace WildBall
 
         private void Start()
         {
-            GameManager.Instance.LoseAction += () =>
+            if(SceneManager.GetActiveScene().buildIndex != 0)
             {
-                losePanel?.Invoke();
-            };
+                GameManager.Instance.LoseAction += () =>
+                {
+                    losePanel?.Invoke();
+                };
+            }
         }
     }
 }
