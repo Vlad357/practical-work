@@ -35,6 +35,15 @@ public partial class @WildBallInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ToInteract"",
+                    ""type"": ""Button"",
+                    ""id"": ""97562141-87c3-4b44-bb9f-8ca37bd60f26"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -92,6 +101,17 @@ public partial class @WildBallInputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3524ae9b-668b-4687-91df-966cbcf32e4e"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToInteract"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -101,6 +121,7 @@ public partial class @WildBallInputSystem: IInputActionCollection2, IDisposable
         // Ball
         m_Ball = asset.FindActionMap("Ball", throwIfNotFound: true);
         m_Ball_Move = m_Ball.FindAction("Move", throwIfNotFound: true);
+        m_Ball_ToInteract = m_Ball.FindAction("ToInteract", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -163,11 +184,13 @@ public partial class @WildBallInputSystem: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Ball;
     private List<IBallActions> m_BallActionsCallbackInterfaces = new List<IBallActions>();
     private readonly InputAction m_Ball_Move;
+    private readonly InputAction m_Ball_ToInteract;
     public struct BallActions
     {
         private @WildBallInputSystem m_Wrapper;
         public BallActions(@WildBallInputSystem wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Ball_Move;
+        public InputAction @ToInteract => m_Wrapper.m_Ball_ToInteract;
         public InputActionMap Get() { return m_Wrapper.m_Ball; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -180,6 +203,9 @@ public partial class @WildBallInputSystem: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @ToInteract.started += instance.OnToInteract;
+            @ToInteract.performed += instance.OnToInteract;
+            @ToInteract.canceled += instance.OnToInteract;
         }
 
         private void UnregisterCallbacks(IBallActions instance)
@@ -187,6 +213,9 @@ public partial class @WildBallInputSystem: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @ToInteract.started -= instance.OnToInteract;
+            @ToInteract.performed -= instance.OnToInteract;
+            @ToInteract.canceled -= instance.OnToInteract;
         }
 
         public void RemoveCallbacks(IBallActions instance)
@@ -207,5 +236,6 @@ public partial class @WildBallInputSystem: IInputActionCollection2, IDisposable
     public interface IBallActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnToInteract(InputAction.CallbackContext context);
     }
 }

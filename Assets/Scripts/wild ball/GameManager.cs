@@ -15,6 +15,9 @@ namespace WildBall
         public Action LoseAction;
 
         public GameObject exitPrefab;
+        public GameObject buttons;
+
+        public GameObject textToInteract;
 
         public void LoadNextLevel()
         {
@@ -44,6 +47,7 @@ namespace WildBall
         private void SpawnExit()
         {
             Instantiate(exitPrefab);
+            Instantiate(buttons);
         }
 
         private void DeleteAllObstacle()
@@ -56,8 +60,17 @@ namespace WildBall
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
+            Init();
+        }
+
+        private void Init()
+        {
             StartCoroutine(Countdown());
             FindObstacle();
+
+            LevelEventPanel levelPanel = FindObjectOfType<LevelEventPanel>();
+            LoseAction += () => levelPanel.losePanel?.Invoke();
+            textToInteract = levelPanel.textToInteract;
         }
 
         private void Start()
@@ -65,6 +78,8 @@ namespace WildBall
             if (Instance == null)
             {
                 Instance = this;
+
+                Init();
             }
             else
             {
@@ -74,8 +89,6 @@ namespace WildBall
 
             DontDestroyOnLoad(gameObject);
 
-            StartCoroutine(Countdown());
-            FindObstacle();
 
             SceneManager.sceneLoaded += OnSceneLoaded;
         }

@@ -350,7 +350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1060675334}
-  - component: {fileID: 1060675333}
+  - component: {fileID: 1060675335}
   m_Layer: 0
   m_Name: game manager
   m_TagString: Untagged
@@ -358,21 +358,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1060675333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060675332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f247c64b71ce6164481102aefafea387, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeUntilVictory: 10
-  obstacles: []
-  exitPrefab: {fileID: 4149903629264833089, guid: de1ea423e7e0a3d409d531235074c872, type: 3}
 --- !u!4 &1060675334
 Transform:
   m_ObjectHideFlags: 0
@@ -388,6 +373,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1060675335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060675332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f247c64b71ce6164481102aefafea387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeUntilVictory: 10
+  obstacles: []
+  exitPrefab: {fileID: 4149903629264833089, guid: de1ea423e7e0a3d409d531235074c872, type: 3}
+  buttons: {fileID: 4674535933045047777, guid: a51f8a74fc9790149b362e8c4e6afc94, type: 3}
+  textToInteract: {fileID: 0}
 --- !u!1 &1076434437
 GameObject:
   m_ObjectHideFlags: 0

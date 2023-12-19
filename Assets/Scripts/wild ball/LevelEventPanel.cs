@@ -8,6 +8,8 @@ namespace WildBall
     public class LevelEventPanel : MonoBehaviour
     {
         public UnityEvent losePanel;
+        public GameObject textToInteract;
+
 
         public void LoadLevel(int id)
         {
@@ -18,18 +20,9 @@ namespace WildBall
 
         public void ReloadScene()
         {
+            GameManager.Instance.StopAllCoroutines();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
-        private void Start()
-        {
-            if(SceneManager.GetActiveScene().buildIndex != 0)
-            {
-                GameManager.Instance.LoseAction += () =>
-                {
-                    losePanel?.Invoke();
-                };
-            }
-        }
     }
 }

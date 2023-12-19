@@ -247,6 +247,8 @@ MonoBehaviour:
   timeUntilVictory: 10
   obstacles: []
   exitPrefab: {fileID: 4149903629264833089, guid: de1ea423e7e0a3d409d531235074c872, type: 3}
+  buttons: {fileID: 4674535933045047777, guid: a51f8a74fc9790149b362e8c4e6afc94, type: 3}
+  textToInteract: {fileID: 0}
 --- !u!4 &83071660
 Transform:
   m_ObjectHideFlags: 0
@@ -791,6 +793,7 @@ MonoBehaviour:
   losePanel:
     m_PersistentCalls:
       m_Calls: []
+  textToInteract: {fileID: 0}
 --- !u!1 &245522354
 GameObject:
   m_ObjectHideFlags: 0

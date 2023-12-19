@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 namespace WildBall
@@ -6,7 +7,7 @@ namespace WildBall
     {
         public Vector2 inputMovement;
 
-        private WildBallInputSystem _inputActions;
+        private WildBallInputSystem _inputSystem;
         private Player _player;
         private Vector3 _moveInput;
 
@@ -16,22 +17,24 @@ namespace WildBall
         private void Awake()
         {
             _player = GetComponent<Player>();
-            _inputActions = new WildBallInputSystem();
+            _inputSystem = new WildBallInputSystem();
+
+            _inputSystem.Ball.ToInteract.performed += context => _player.toInteract();
         }
 
         private void OnEnable()
         {
-            _inputActions.Enable();
+            _inputSystem.Enable();
         }
 
         private void OnDisable()
         {
-            _inputActions.Disable();
+            _inputSystem.Disable();
         }
 
         private void Update()
         {
-            inputMovement = _inputActions.Ball.Move.ReadValue<Vector2>();
+            inputMovement = _inputSystem.Ball.Move.ReadValue<Vector2>();
 
             Movement();
         }
