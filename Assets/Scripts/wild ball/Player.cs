@@ -11,6 +11,7 @@ namespace WildBall
     public class Player : MonoBehaviour
     {
         public Action toInteract;
+        public GameObject deadEffect;
 
         private Rigidbody _rigidbody;
 
@@ -43,7 +44,9 @@ namespace WildBall
 
         public void Lose()
         {
+            Instantiate(deadEffect, transform.position, transform.rotation);
             GameManager.Instance.LoseEvent();
+            Destroy(gameObject);
         }
 
         private IEnumerator Breack()

@@ -31,7 +31,14 @@ namespace WildBall
 
         public void LoseEvent()
         {
+            StartCoroutine(LoseCorutine());
+        }
+
+        private IEnumerator LoseCorutine()
+        {
+            yield return new WaitForSeconds(1f);
             LoseAction?.Invoke();
+
         }
 
         private IEnumerator Countdown()
