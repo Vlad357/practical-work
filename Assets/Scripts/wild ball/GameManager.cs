@@ -63,6 +63,7 @@ namespace WildBall
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
+            StopAllCoroutines();
             Init();
         }
 
