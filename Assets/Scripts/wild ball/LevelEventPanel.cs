@@ -7,22 +7,16 @@ namespace WildBall
 {
     public class LevelEventPanel : MonoBehaviour
     {
-        public UnityEvent losePanel;
-        public GameObject textToInteract;
-
+        public UnityEvent loseEventUI;
 
         public void LoadLevel(int id)
         {
             SceneManager.LoadScene(id);
-
         }
-
-
         public void ReloadScene()
         {
             GameManager.Instance.StopAllCoroutines();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-
     }
 }

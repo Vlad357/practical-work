@@ -11,15 +11,12 @@ namespace WildBall
         private Player _player;
         private Vector3 _moveInput;
 
-
         public bool HasMoveInput() => _moveInput.magnitude > 0.1f;
 
         private void Awake()
         {
             _player = GetComponent<Player>();
             _inputSystem = new WildBallInputSystem();
-
-            _inputSystem.Ball.ToInteract.performed += context => _player.toInteract();
         }
 
         private void OnEnable()

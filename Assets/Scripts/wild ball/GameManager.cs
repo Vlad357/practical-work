@@ -9,6 +9,7 @@ namespace WildBall
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
+
         public float timeUntilVictory = 10f;
         public List<GameObject> obstacles;
 
@@ -16,8 +17,6 @@ namespace WildBall
 
         public GameObject exitPrefab;
         public GameObject buttons;
-
-        public GameObject textToInteract;
 
         public void LoadNextLevel()
         {
@@ -38,7 +37,6 @@ namespace WildBall
         {
             yield return new WaitForSeconds(1f);
             LoseAction?.Invoke();
-
         }
 
         private IEnumerator Countdown()
@@ -76,8 +74,7 @@ namespace WildBall
             FindObstacle();
 
             LevelEventPanel levelPanel = FindObjectOfType<LevelEventPanel>();
-            LoseAction += () => levelPanel.losePanel?.Invoke();
-            textToInteract = levelPanel.textToInteract;
+            LoseAction += () => levelPanel.loseEventUI?.Invoke();
         }
 
         private void Start()
@@ -85,7 +82,6 @@ namespace WildBall
             if (Instance == null)
             {
                 Instance = this;
-
                 Init();
             }
             else
@@ -95,7 +91,6 @@ namespace WildBall
             }
 
             DontDestroyOnLoad(gameObject);
-
 
             SceneManager.sceneLoaded += OnSceneLoaded;
         }

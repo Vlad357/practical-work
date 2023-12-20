@@ -13,15 +13,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "ToInteract",
-                    "type": "Button",
-                    "id": "97562141-87c3-4b44-bb9f-8ca37bd60f26",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -79,17 +70,6 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "3524ae9b-668b-4687-91df-966cbcf32e4e",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ToInteract",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         }

@@ -10,7 +10,6 @@ namespace WildBall
     [RequireComponent(typeof(PlayerInput))]
     public class Player : MonoBehaviour
     {
-        public Action toInteract;
         public GameObject deadEffect;
 
         private Rigidbody _rigidbody;
