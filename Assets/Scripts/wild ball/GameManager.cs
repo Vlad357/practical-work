@@ -16,7 +16,6 @@ namespace WildBall
         public Action LoseAction;
 
         public GameObject exitPrefab;
-        public GameObject buttons;
 
         public void LoadNextLevel()
         {
@@ -52,7 +51,6 @@ namespace WildBall
         private void SpawnExit()
         {
             Instantiate(exitPrefab);
-            Instantiate(buttons);
         }
 
         private void DeleteAllObstacle()
