@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class BonusObject : MonoBehaviour
 {
-    public GameObject bonusEffect;
+    public ParticleSystem bonusEffect;
 
     private void OnTriggerEnter(Collider other)
     {
-        Instantiate(bonusEffect, transform.position, transform.rotation);
-        Destroy(gameObject);
+        if (other.CompareTag("Player"))
+        {
+            bonusEffect.Play();
+            Destroy(gameObject);
+        }
     }
 }
