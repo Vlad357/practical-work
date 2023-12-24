@@ -19,7 +19,7 @@ namespace WildBall
 
         public void LoadNextLevel()
         {
-            if(SceneManager.GetActiveScene().buildIndex < 5)
+            if(SceneManager.GetActiveScene().buildIndex < 6)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 return;
@@ -40,7 +40,8 @@ namespace WildBall
 
         private IEnumerator Countdown()
         {
-            if(SceneManager.GetActiveScene().buildIndex != 0)
+            if(SceneManager.GetActiveScene().buildIndex != 0 &&
+                SceneManager.GetActiveScene().buildIndex != 6)
             {
                 yield return new WaitForSeconds(timeUntilVictory);
                 DeleteAllObstacle();

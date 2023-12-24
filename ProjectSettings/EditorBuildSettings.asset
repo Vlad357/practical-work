@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/wild ball/5 level.unity
     guid: 61b11ba5b5348ef478eb404b2b53dca0
+  - enabled: 1
+    path: Assets/Scenes/wild ball/sceneWhithProBuilder/SceneProBuilder.unity
+    guid: 1ad03579aa7f9774f9482179fd51fd8f
   m_configObjects: {}
