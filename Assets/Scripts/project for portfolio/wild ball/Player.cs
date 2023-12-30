@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 namespace WildBall
 {
     [RequireComponent(typeof(Rigidbody))]
-    [RequireComponent(typeof(PlayerInput))]
+    [RequireComponent(typeof(PlayerInputs))]
     public class Player : MonoBehaviour
     {
         public GameObject deadEffect;

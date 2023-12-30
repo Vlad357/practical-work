@@ -1,10 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SliderScript : MonoBehaviour
 {
     private SliderJoint2D _slider;
+
+    private void Start()
+    {
+        _slider = GetComponent<SliderJoint2D>();
+        StartCoroutine(setSpeedMotor());
+    }
+
     private IEnumerator setSpeedMotor()
     {
         JointMotor2D jointMotor2D = new JointMotor2D();
@@ -15,11 +21,4 @@ public class SliderScript : MonoBehaviour
 
         StartCoroutine(setSpeedMotor());
     }
-
-    private void Start()
-    {
-        _slider = GetComponent<SliderJoint2D>();
-        StartCoroutine(setSpeedMotor());
-    }
-
 }

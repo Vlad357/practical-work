@@ -6,24 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/portfolio/wild ball/main menu.unity
-    guid: e7330255523610f4b9c420d05762c942
-  - enabled: 0
-    path: Assets/Scenes/wild ball/1 level.unity
-    guid: c8205eb9c1c26ae43921994698e8a07a
-  - enabled: 0
-    path: Assets/Scenes/wild ball/2 level.unity
-    guid: 3d5d72e69e386cb418b328f2e804293f
-  - enabled: 0
-    path: Assets/Scenes/wild ball/3 level.unity
-    guid: 2eed878f676876c428824312c69d3ef2
-  - enabled: 0
-    path: Assets/Scenes/wild ball/4 level.unity
-    guid: 06b6a7470bbbecf438fb689247a98732
-  - enabled: 0
-    path: Assets/Scenes/wild ball/5 level.unity
-    guid: 61b11ba5b5348ef478eb404b2b53dca0
-  - enabled: 0
-    path: Assets/Scenes/portfolio/wild ball/sceneWhithProBuilder/SceneProBuilder.unity
-    guid: 1ad03579aa7f9774f9482179fd51fd8f
+    path: Assets/Scenes/platformer/platformer 2.unity
+    guid: 35da8b4aa86e4234e923f1447bfcb770
   m_configObjects: {}
