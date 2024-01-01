@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Platfomer
+namespace Platformer
 {
     [RequireComponent(typeof(Animator))]
     public class Entity : MonoBehaviour

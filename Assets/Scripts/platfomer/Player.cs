@@ -1,10 +1,9 @@
-using Platfomer;
 using System.Collections;
 using UnityEngine;
 
 namespace Platformer
 {
-    [RequireComponent(typeof(Platfomer.PlayerInput))]
+    [RequireComponent(typeof(PlayerInput))]
     [RequireComponent(typeof(Rigidbody2D))]
     public class Player : Entity
     {
@@ -14,24 +13,39 @@ namespace Platformer
 
         private bool _isGrounded;
         private float _speed = 3;
-        private float _jumpForce = 5;
+        private float _jumpForce = 9;
+
+        private int _coin;
 
         private PlayerInput _input;
         private Rigidbody2D _rigidbody;
+
+        private PlayerUI _playerUI;
+        private LosePanel _losePanel;
+
+        public int Coin
+        {
+            get => _coin;
+            set
+            {
+                _coin = value;
+                _playerUI?.SetCoins(value);
+            }
+        }
 
         public override float CurrentHealth { 
             get => base.CurrentHealth; 
             set
             {
                 _currentHealth = value;
-                FindObjectOfType<HealthBar>()?.SetHealth(_currentHealth, _maxHealth);
+                _playerUI?.SetHealth(_currentHealth, _maxHealth);
             }
         }
 
         protected override void Death()
         {
             base.Death();
-            FindObjectOfType<LosePanel>()?.Show();
+            _losePanel?.Show();
         }
 
         private new void Start()
@@ -39,9 +53,13 @@ namespace Platformer
             base.Start();
             _input = GetComponent<PlayerInput>();
             _rigidbody = GetComponent<Rigidbody2D>();
+            _playerUI = FindObjectOfType<PlayerUI>();
+            _losePanel = FindObjectOfType<LosePanel>();
 
             _input.playerJump = Jump;
             _input.playerAttack = Attack;
+
+            _playerUI?.SetHealth(_currentHealth, _maxHealth);
         }
         private void FixedUpdate()
         {

@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Platfomer
+namespace Platformer
 {
     public class EnemyNPC : Entity
     {
