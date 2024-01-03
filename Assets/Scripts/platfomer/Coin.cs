@@ -9,7 +9,7 @@ namespace Platformer
             if (collision.gameObject.CompareTag("Player"))
             {
                 Player player = collision.gameObject.GetComponentInParent<Player>();
-                player.Coin+=1;
+                player.Coin++;
                 Destroy(gameObject);
             }
         }

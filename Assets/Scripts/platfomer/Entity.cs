@@ -17,7 +17,7 @@ namespace Platformer
 
         protected States _state = States.Idle;
 
-        protected float _currentHealth;
+        [SerializeField]protected float _currentHealth;
         protected float _maxHealth = 100f;
 
         protected float _speed = 4.5f;
@@ -50,18 +50,21 @@ namespace Platformer
             }
         }
 
+        public void SetDamageOnHitBox()
+        {
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                enemy.GetComponentInParent<Entity>().SetDamage(damage);
+                _onAttack?.Invoke();
+            }
+        }
+
         protected void Attack()
         {
             if (attackReady && _state != States.Death)
             {
                 AnimationAttack();
-
-                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
-                foreach (Collider2D enemy in hitEnemies)
-                {
-                    enemy.GetComponentInParent<Entity>().SetDamage(damage);
-                    _onAttack?.Invoke();
-                }
 
                 attackReady = false;
                 StartCoroutine(AttackCoolDown());

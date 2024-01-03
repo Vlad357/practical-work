@@ -247,10 +247,11 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
-  attackRange: 1
+  attackRange: 2
   attackRate: 2
   damage: 20
   attackReady: 1
+  _currentHealth: 0
 --- !u!114 &644289231809780328
 MonoBehaviour:
   m_ObjectHideFlags: 0
