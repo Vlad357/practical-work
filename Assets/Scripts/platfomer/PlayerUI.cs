@@ -8,6 +8,7 @@ namespace Platformer
     {
         public Image hpBar;
         public TextMeshProUGUI coinCounter;
+
         public void SetHealth(float currentHP, float maxHP)
         {
             hpBar.fillAmount = currentHP / maxHP;

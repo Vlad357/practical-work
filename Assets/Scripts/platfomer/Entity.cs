@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace Platformer
     {
         public Transform attackPoint;
         public LayerMask enemyLayer;
+        public LayerMask groundLayer;
         public float attackRange = 1f;
         public float attackRate = 2f;
         public float damage = 20f;
@@ -18,18 +20,21 @@ namespace Platformer
         protected float _currentHealth;
         protected float _maxHealth = 100f;
 
+        protected float _speed = 4.5f;
+        protected float _jumpForce = 15;
+        protected float _groundDistance = 0.1f;
+
+        protected bool _isGrounded = true;
+
+        protected Action _onAttack;
+
         protected Animator _animator;
+        protected Rigidbody2D _rigidbody;
 
         public virtual float CurrentHealth
         {
-            get
-            {
-                return _currentHealth;
-            }
-            set
-            {
-                _currentHealth = value;
-            }
+            get => _currentHealth;
+            set => _currentHealth = value;
         }
 
         public virtual void SetDamage(float damage)
@@ -37,6 +42,7 @@ namespace Platformer
             if (damage > 0)
             {
                 CurrentHealth -= damage;
+                //TODO: queue damage animation
                 if (_currentHealth <= 0)
                 {
                     Death();
@@ -54,12 +60,34 @@ namespace Platformer
                 foreach (Collider2D enemy in hitEnemies)
                 {
                     enemy.GetComponentInParent<Entity>().SetDamage(damage);
+                    _onAttack?.Invoke();
                 }
 
                 attackReady = false;
                 StartCoroutine(AttackCoolDown());
             }
         }
+
+        protected void Jump()
+        {
+            _isGrounded = Physics2D.Raycast(transform.position, Vector3.down, _groundDistance, groundLayer);
+            if (_isGrounded)
+                _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode2D.Impulse);
+        }
+
+        protected void Movement(Vector2 directionMove)
+        {
+            Idle();
+            if (directionMove.magnitude > 0.1f)
+            {
+                Run();
+                _animator.SetFloat(PlayerAnimatorParameters.DIRECTIONAXIS, directionMove.x);
+            }
+
+            Vector2 direction = directionMove * _speed;
+            _rigidbody.velocity = new(direction.x, _rigidbody.velocity.y);
+        }
+
         protected IEnumerator AttackCoolDown()
         {
             yield return new WaitForSeconds(attackRate);
@@ -100,6 +128,8 @@ namespace Platformer
         protected void Start()
         {
             _animator = GetComponent<Animator>();
+            _rigidbody = GetComponent<Rigidbody2D>();
+
             CurrentHealth = _maxHealth;
             _animator.SetFloat(PlayerAnimatorParameters.DIRECTIONAXIS, -1);
         }

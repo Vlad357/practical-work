@@ -10,7 +10,7 @@ namespace Platformer
 
         private PlayerPlatformerInputSystem _inputSystem;
 
-        public Vector2 Move => new(_inputSystem.Player.Move.ReadValue<float>(), 0f);
+        public Vector2 moveInput => new(_inputSystem.Player.Move.ReadValue<float>(), 0f);
 
         private void Awake()
         {

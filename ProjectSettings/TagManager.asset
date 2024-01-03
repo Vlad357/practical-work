@@ -7,6 +7,8 @@ TagManager:
   - ball
   - springConnecter
   - obstacle
+  - music
+  - sound
   layers:
   - Default
   - TransparentFX
@@ -43,6 +45,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Paralax
+    uniqueID: 2268684139
     locked: 0
   - name: Decorations
     uniqueID: 2384828597

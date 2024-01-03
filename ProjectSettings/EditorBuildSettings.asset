@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/platformer/platformer 2.unity
-    guid: 35da8b4aa86e4234e923f1447bfcb770
+    path: Assets/Scenes/platformer/platformer finaly practical work/Main menu.unity
+    guid: 5dc7daeabf7e09a49b9e2d1e560dbef0
+  - enabled: 1
+    path: Assets/Scenes/platformer/platformer finaly practical work/level 1.unity
+    guid: a7e698095eb356443b98af0c4bfe53cb
   m_configObjects: {}
