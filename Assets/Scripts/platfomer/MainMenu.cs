@@ -15,7 +15,6 @@ namespace Platformer
         public void LoadLevel(int id)
         {
             SceneManager.LoadScene(id);
-            
         }
 
         public void Out()

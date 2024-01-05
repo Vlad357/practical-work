@@ -12,7 +12,6 @@ namespace Platformer
 
         public void ExitToMainMenu()
         {
-            // TODO: implement save game
             SceneManager.LoadScene("Main menu");
         }
     }

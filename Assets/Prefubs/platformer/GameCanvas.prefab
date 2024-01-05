@@ -952,6 +952,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5869357951996154152}
+        m_TargetAssemblyTypeName: Platformer.LoadManager, Assembly-CSharp
+        m_MethodName: SaveGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3333004030597970232}
+        m_TargetAssemblyTypeName: Platformer.PauseMenu, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1948657904245295490
 GameObject:
   m_ObjectHideFlags: 0
@@ -2731,6 +2755,7 @@ GameObject:
   - component: {fileID: 4920639901592804357}
   - component: {fileID: 2622839487821987938}
   - component: {fileID: 3333004030597970232}
+  - component: {fileID: 5869357951996154152}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -2865,6 +2890,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1706a4fec1edcd74fb1ffd6d2ffaccd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5869357951996154152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3628295883975988539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d40f2f17172e749855fe6bbae5fdbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefub: {fileID: 2440741736567655582, guid: ee14ec76d9b4d9843ba476414903e11e, type: 3}
 --- !u!1 &3775306994006080726
 GameObject:
   m_ObjectHideFlags: 0
@@ -6171,6 +6209,18 @@ MonoBehaviour:
       - m_Target: {fileID: 3333004030597970232}
         m_TargetAssemblyTypeName: Platformer.PauseMenu, Assembly-CSharp
         m_MethodName: ExitToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5869357951996154152}
+        m_TargetAssemblyTypeName: Platformer.LoadManager, Assembly-CSharp
+        m_MethodName: SaveGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
