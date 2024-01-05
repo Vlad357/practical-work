@@ -20,6 +20,8 @@ namespace Platformer
         {
             startPosition = transform.position;
             startZ = transform.position.z;
+
+            subject = FindObjectOfType<Player>().transform;
         }
 
         private void Update()

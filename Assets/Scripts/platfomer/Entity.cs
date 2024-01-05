@@ -17,10 +17,10 @@ namespace Platformer
 
         protected States _state = States.Idle;
 
-        [SerializeField]protected float _currentHealth;
+        protected float _currentHealth;
         protected float _maxHealth = 100f;
 
-        protected float _speed = 4.5f;
+        protected float _speed = 5.5f;
         protected float _jumpForce = 15;
         protected float _groundDistance = 0.1f;
 

@@ -1,5 +1,9 @@
+using Cinemachine;
+using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Platformer
 {
@@ -7,14 +11,24 @@ namespace Platformer
     [RequireComponent(typeof(Rigidbody2D))]
     public class Player : Entity
     {
+        public Vector2 positionOnNextScene;
+
         private int _coin;
 
         private PlayerInput _input;
-
+        private Statistic _statistic;
         private PlayerUI _playerUI;
         private GameOverPanel _gameOverPanel;
 
-        private Statistic _statistic;
+        public Statistic Statistic
+        {
+            get => _statistic;
+            set
+            {
+                _statistic = value;
+                Coin = _statistic.coins;
+            }
+        }
 
         public int Coin
         {
@@ -52,19 +66,28 @@ namespace Platformer
             _gameOverPanel.PlayerStatistic = _statistic;
         }
 
-        private new void Start()
+        private void Init()
         {
-            base.Start();
-            _input = GetComponent<PlayerInput>();
+            FindAnyObjectByType<CinemachineVirtualCamera>().Follow = transform;
             _playerUI = FindObjectOfType<PlayerUI>();
             _gameOverPanel = FindObjectOfType<GameOverPanel>();
+
+            _input = GetComponent<PlayerInput>();
 
             _input.playerJump = Jump;
             _input.playerAttack = Attack;
 
             _playerUI?.SetHealth(_currentHealth, _maxHealth);
+            _playerUI?.SetCoins(Coin);
 
-            _onAttack += () => _statistic.damageDone+= damage;
+            _onAttack += () => _statistic.damageDone += damage;
+        }
+
+        private new void Start()
+        {
+            base.Start();
+            
+            Init();
         }
         private void FixedUpdate()
         {

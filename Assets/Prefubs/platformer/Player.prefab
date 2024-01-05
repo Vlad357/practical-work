@@ -75,7 +75,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7699445}
+  m_Size: {x: 1.43, y: 1.7699445}
   m_EdgeRadius: 0
 --- !u!1 &2440741736567655582
 GameObject:
@@ -251,7 +251,7 @@ MonoBehaviour:
   attackRate: 2
   damage: 20
   attackReady: 1
-  _currentHealth: 0
+  _speed: 5.5
 --- !u!114 &644289231809780328
 MonoBehaviour:
   m_ObjectHideFlags: 0
