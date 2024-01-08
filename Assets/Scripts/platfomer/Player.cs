@@ -62,7 +62,7 @@ namespace Platformer
         protected override void Death()
         {
             base.Death();
-            _gameOverPanel.Show();
+            _gameOverPanel.Show(false);
             _gameOverPanel.PlayerStatistic = _statistic;
         }
 

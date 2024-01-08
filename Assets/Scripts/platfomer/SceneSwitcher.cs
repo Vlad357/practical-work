@@ -23,9 +23,9 @@ namespace Platformer
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                SceneManager.sceneLoaded += OnSceneLoad;
                 statistic = FindObjectOfType<Player>().Statistic;
-                SceneManager.LoadScene(idSceneToLoad);
+                SceneManager.sceneLoaded += OnSceneLoad;
+                FindObjectOfType<GameOverPanel>().Show(true);
             }
         }
     }
