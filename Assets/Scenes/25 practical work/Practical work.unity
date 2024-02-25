@@ -1507,7 +1507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb64624b721a9414da187ba6bf6c97ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impulseStrength: 1
+  impulseStrength: 200
 --- !u!54 &1465039633
 Rigidbody:
   m_ObjectHideFlags: 0
