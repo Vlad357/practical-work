@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4e0f1f0-99e7-420c-9fcc-143736b40a54" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.practical-work/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.practical-work/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/26 practical work/practical work.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/26 practical work/practical work.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/26 practical work/test scene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/26 practical work/test scene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Timelines/TimelinePracticalWork26.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Timelines/TimelinePracticalWork26.playable" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Importing assets/TerrainSampleAssets/ShaderGraphs/TerrainGrass.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Importing assets/TerrainSampleAssets/ShaderGraphs/TerrainGrass.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerrainDemoScene_URP/Readme.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerrainDemoScene_URP/Readme.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +104,7 @@
       <workItem from="1709451502780" duration="64000" />
       <workItem from="1709455718717" duration="33000" />
       <workItem from="1709466409183" duration="1925000" />
+      <workItem from="1710349592162" duration="1791000" />
     </task>
     <servers />
   </component>
