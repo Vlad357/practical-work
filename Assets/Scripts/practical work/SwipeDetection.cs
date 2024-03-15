@@ -1,64 +1,51 @@
-
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
-public class SwipeDetection : MonoBehaviour
+namespace practical_work
 {
-    private TouchInput _input;
-
-    private Vector2 touchStartPosition;
-    private Vector2 touchEndPosition;
-    private float swipeThresholdX = 100f;
-    private float swipeThresholdY = 50f;
-
-    private void Start()
+    public class SwipeDetection
     {
-        _input = new TouchInput();
-        _input.Enable();
-        _input.ScreenInput.Touch.started += OnTouchStart;
-        _input.ScreenInput.Touch.canceled += OnTouchEnd;
-    }
+        private TouchInput _input;
 
-    private void OnDisable()
-    {
-        _input.Disable();
-    }
+        private Vector2 _touchStartPosition;
+        private Vector2 _touchEndPosition;
+        private readonly float _swipeThresholdX = 100f;
+        private readonly float _swipeThresholdY = 50f;
 
-    public void OnTouchStart(InputAction.CallbackContext context)
-    {
-        print(1);
-        if (context.started)
+        public SwipeDetection(TouchInput input)
         {
-            print(2);
-
-            touchStartPosition = _input.ScreenInput.TouchPosition.ReadValue<Vector2>();
+            this._input = input;
+        
+            _input.ScreenInput.Touch.started += OnTouchStart;
+            _input.ScreenInput.Touch.canceled += OnTouchEnd;
         }
-    }
- 
-    public void OnTouchEnd(InputAction.CallbackContext context)
-    {
-        print(3);
 
-        if (context.canceled)
+        public void OnTouchStart(InputAction.CallbackContext context)
         {
-            print(4);
-
-            touchEndPosition = _input.ScreenInput.TouchPosition.ReadValue<Vector2>();
-            DetectSwipe();
+            if (context.started)
+            {
+                _touchStartPosition = _input.ScreenInput.TouchPosition.ReadValue<Vector2>();
+            }
         }
-    }
  
-    private void DetectSwipe()
-    {
-        float swipeX = touchEndPosition.x - touchStartPosition.x;
-        float swipeY = touchEndPosition.y - touchStartPosition.y;
- 
-        if (Mathf.Abs(swipeX) >= swipeThresholdX && Mathf.Abs(swipeY) <= swipeThresholdY && swipeX > 0)
+        public void OnTouchEnd(InputAction.CallbackContext context)
         {
-            Debug.Log("Swipe to the right");
+            if (context.canceled)
+            {
+                _touchEndPosition = _input.ScreenInput.TouchPosition.ReadValue<Vector2>();
+                DetectSwipe();
+            }
+        }
+ 
+        private void DetectSwipe()
+        {
+            float swipeX = _touchEndPosition.x - _touchStartPosition.x;
+            float swipeY = _touchEndPosition.y - _touchStartPosition.y;
+ 
+            if (Mathf.Abs(swipeX) >= _swipeThresholdX && Mathf.Abs(swipeY) <= _swipeThresholdY && swipeX > 0)
+            {
+                Debug.Log("Swipe to the right");
+            }
         }
     }
 }
