@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Practical work 29/Practical work.unity
-    guid: 6a07c7b136b1af24e91dafed83c813f8
+    path: Assets/Scenes/practical work 30/Main menu.unity
+    guid: b212e8c4b0607de4b8cd97bce609f018
+  - enabled: 1
+    path: Assets/Scenes/practical work 30/level 1.unity
+    guid: ca8c3505f3519b347ba943079fa688f3
+  - enabled: 1
+    path: Assets/Scenes/practical work 30/level 2.unity
+    guid: a2a1464d34c4bdd42b2db62388a7505d
   m_configObjects: {}

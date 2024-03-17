@@ -1,0 +1,34 @@
+{
+    "name": "BallInputAction",
+    "maps": [
+        {
+            "name": "Ball",
+            "id": "3185d2f5-cda2-4cf7-a4e5-fcaaabcb2da6",
+            "actions": [
+                {
+                    "name": "Delta",
+                    "type": "PassThrough",
+                    "id": "1f3c1600-f2d4-48d6-af47-aba78e888036",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f7b9294f-9bff-4b0f-b0f7-1e71bd5a69d5",
+                    "path": "<Touchscreen>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Delta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
