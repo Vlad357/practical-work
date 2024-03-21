@@ -19,6 +19,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/practical work 30/Countdown.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/practical work 30/SwitchScene.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/practical work 30/WinField.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/practical work 32/Zone.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Devices/Touchscreen.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -109,6 +110,8 @@
       <workItem from="1710431276095" duration="4203000" />
       <workItem from="1710521736580" duration="5291000" />
       <workItem from="1710657185426" duration="6547000" />
+      <workItem from="1711014545045" duration="211000" />
+      <workItem from="1711014862209" duration="4713000" />
     </task>
     <servers />
   </component>
