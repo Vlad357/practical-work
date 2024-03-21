@@ -5,25 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4e0f1f0-99e7-420c-9fcc-143736b40a54" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/practical work 30/GameplayInputs.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/practical work 30/GameplayInputs.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/practical work 30/PhysicsGravityChanded.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/practical work 30/PhysicsGravityChanded.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.practical-work/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.practical-work/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/practical work.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/practical work/ApproximationDetection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/practical work/ApproximationDetection.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/practical work/GameplayInput.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/practical work/GameplayInput.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/practical work/SwipeDetection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/practical work/SwipeDetection.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/practical work/TouchInput.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/practical work/TouchInput.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/practical work/TouchInput.inputactions" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/practical work/TouchInput.inputactions.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +108,7 @@
       <workItem from="1710356406667" duration="1282000" />
       <workItem from="1710431276095" duration="4203000" />
       <workItem from="1710521736580" duration="5291000" />
-      <workItem from="1710657185426" duration="5948000" />
+      <workItem from="1710657185426" duration="6547000" />
     </task>
     <servers />
   </component>
